@@ -8,8 +8,8 @@
     body {
         margin: 0;
         font-family: 'Segoe UI', sans-serif;
-        background: linear-gradient(135deg, #0f0f0f, #1b0a0a);
-        color: white;
+        background: linear-gradient(135deg, #000000, #140a1f, #2b0f4a);
+        color: #ffffff;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -18,95 +18,138 @@
     }
 
     .card {
-        background: rgba(255, 0, 60, 0.08);
-        border: 1px solid rgba(255, 0, 60, 0.3);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(200, 160, 255, 0.35);
         backdrop-filter: blur(10px);
-        padding: 40px;
-        border-radius: 20px;
+        padding: 42px;
+        border-radius: 22px;
         text-align: center;
-        box-shadow: 0 0 25px rgba(255, 0, 60, 0.3);
-        max-width: 500px;
+        box-shadow: 0 0 30px rgba(160, 100, 255, 0.35);
+        max-width: 520px;
         animation: fadeIn 2s ease;
     }
 
     h1 {
         font-size: 36px;
-        color: #ff2e63;
+        color: #caa6ff;
         margin-bottom: 10px;
+        text-shadow: 0 0 12px rgba(180, 130, 255, 0.6);
     }
 
     p {
         font-size: 18px;
         line-height: 1.6;
         margin-top: 20px;
-        color: #ffd6e0;
+        color: #f2e9ff;
     }
 
     .heart {
-        font-size: 50px;
-        animation: beat 1s infinite;
+        font-size: 52px;
+        animation: beat 1.1s infinite;
         margin-top: 20px;
+        color: #caa6ff;
+        filter: drop-shadow(0 0 10px rgba(180, 130, 255, 0.8));
     }
 
     button {
-        margin-top: 25px;
-        padding: 12px 25px;
+        margin-top: 28px;
+        padding: 12px 30px;
         border: none;
         border-radius: 25px;
-        background: #ff2e63;
-        color: white;
+        background: linear-gradient(45deg, #6d28ff, #caa6ff);
+        color: #ffffff;
         font-size: 16px;
         cursor: pointer;
         transition: 0.3s;
+        box-shadow: 0 0 15px rgba(170, 120, 255, 0.7);
     }
 
     button:hover {
-        background: #ff4f7a;
-        transform: scale(1.05);
+        transform: scale(1.07);
+        box-shadow: 0 0 25px rgba(200, 160, 255, 1);
     }
 
     @keyframes beat {
         0% { transform: scale(1); }
-        50% { transform: scale(1.15); }
+        50% { transform: scale(1.18); }
         100% { transform: scale(1); }
     }
 
     @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(30px); }
+        from { opacity: 0; transform: translateY(35px); }
         to { opacity: 1; transform: translateY(0); }
     }
 
     .hidden {
         display: none;
     }
+
+    /* Partículas blancas flotando */
+    .particles {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        overflow: hidden;
+    }
+
+    .dot {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: float 7s linear infinite;
+    }
+
+    @keyframes float {
+        from { transform: translateY(100vh); }
+        to { transform: translateY(-10vh); }
+    }
 </style>
 </head>
 
 <body>
 
+<div class="particles" id="particles"></div>
+
 <div class="card">
-    <h1>🖤 Viernes 13 del Amor</h1>
+    <h1> Viernes 13 del Amor</h1>
+
     <p>
-        Mi amor dicen que el viernes 13 es de mala suerte...  
-        pero desde que llegaste a mi vida, todo se volvió magia.  
-        Si este día es misterioso, tú eres mi misterio favorito. 💫
+        Mi amor dicen que el viernes 13 es oscuro y misterioso…  
+        pero desde que apareciste, mi mundo tiene luz.  
+        Si este día tiene magia, entonces tú eres mi hechizo favorito. ✨
     </p>
 
-    <div class="heart">❤️</div>
+    <div class="heart">💜</div>
 
     <button onclick="mostrarMensaje()">Abrir mi corazón</button>
 
     <p id="mensaje" class="hidden">
-        No importa la distancia, el tiempo o el destino…  
-        si hoy es viernes 13, entonces que la suerte me persiga contigo.  
-        Porque si amarte es un hechizo… no quiero romperlo jamás. 🖤✨
-        Anni <3
+        No importa el destino, ni el tiempo, ni la distancia…  
+        si hoy es viernes 13, entonces quiero que la suerte siempre me lleve a ti.  
+        Porque si esto es un hechizo… no quiero romperlo jamás. 🖤🤍💜
     </p>
 </div>
 
 <script>
 function mostrarMensaje() {
     document.getElementById("mensaje").classList.remove("hidden");
+}
+
+/* Crear partículas */
+const container = document.getElementById("particles");
+for (let i = 0; i < 70; i++) {
+    const dot = document.createElement("div");
+    dot.className = "dot";
+    dot.style.left = Math.random() * 100 + "vw";
+    dot.style.animationDuration = (Math.random() * 4 + 4) + "s";
+    dot.style.opacity = Math.random();
+    container.appendChild(dot);
 }
 </script>
 
