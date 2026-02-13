@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Viernes 13 del Amor</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #0f0f0f, #1b0a0a);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .card {
+        background: rgba(255, 0, 60, 0.08);
+        border: 1px solid rgba(255, 0, 60, 0.3);
+        backdrop-filter: blur(10px);
+        padding: 40px;
+        border-radius: 20px;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(255, 0, 60, 0.3);
+        max-width: 500px;
+        animation: fadeIn 2s ease;
+    }
+
+    h1 {
+        font-size: 36px;
+        color: #ff2e63;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-top: 20px;
+        color: #ffd6e0;
+    }
+
+    .heart {
+        font-size: 50px;
+        animation: beat 1s infinite;
+        margin-top: 20px;
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        background: #ff2e63;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #ff4f7a;
+        transform: scale(1.05);
+    }
+
+    @keyframes beat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.15); }
+        100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>🖤 Viernes 13 del Amor</h1>
+    <p>
+        Mi amor dicen que el viernes 13 es de mala suerte...  
+        pero desde que llegaste a mi vida, todo se volvió magia.  
+        Si este día es misterioso, tú eres mi misterio favorito. 💫
+    </p>
+
+    <div class="heart">❤️</div>
+
+    <button onclick="mostrarMensaje()">Abrir mi corazón</button>
+
+    <p id="mensaje" class="hidden">
+        No importa la distancia, el tiempo o el destino…  
+        si hoy es viernes 13, entonces que la suerte me persiga contigo.  
+        Porque si amarte es un hechizo… no quiero romperlo jamás. 🖤✨
+        Anni <3
+    </p>
+</div>
+
+<script>
+function mostrarMensaje() {
+    document.getElementById("mensaje").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
